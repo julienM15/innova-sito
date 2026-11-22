@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Innova S.r.l. — engineering &amp; construction</title>
+<meta name="description" content="Innova S.r.l., impresa di costruzioni di Milano: ristrutturazioni complesse, restauri conservativi, hotel, residenziale di lusso e uffici. General contractor.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#141414;--paper:#f6f4f0;--white:#fff;--grey:#6d6a65;--line:#d9d5ce;--accent:#a68a5b;}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Jost',system-ui,sans-serif;font-weight:300;color:var(--ink);background:var(--paper);line-height:1.65;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:1240px;margin:0 auto;padding:0 28px}
+.eyebrow{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;font-weight:500;color:var(--grey);display:flex;align-items:center;gap:14px}
+.eyebrow::before{content:"";width:28px;height:1px;background:currentColor}
+h2{font-weight:300;font-size:clamp(2rem,4.4vw,3.4rem);line-height:1.08;letter-spacing:-.01em;margin:18px 0 28px}
+h3{font-weight:500;font-size:1.05rem;letter-spacing:.02em}
+section{padding:120px 0}
+
+/* logo */
+.logo{display:flex;align-items:baseline;gap:10px;text-decoration:none}
+.logo b{font-weight:400;font-size:1.55rem;letter-spacing:.12em}
+.logo b span{font-weight:300;font-size:1.9rem;display:inline-block;transform:translateY(2px)}
+.logo small{font-size:.68rem;letter-spacing:.08em;color:var(--grey)}
+
+/* nav */
+header{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s,box-shadow .3s}
+header.solid{background:rgba(246,244,240,.94);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line)}
+.nav{display:flex;justify-content:space-between;align-items:center;height:78px}
+.nav ul{display:flex;gap:34px;list-style:none}
+.nav ul a{text-decoration:none;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:400;position:relative}
+.nav ul a::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:1px;background:currentColor;transition:width .3s}
+.nav ul a:hover::after{width:100%}
+header:not(.solid) .nav{color:#fff}
+header:not(.solid) .logo small{color:rgba(255,255,255,.75)}
+.burger{display:none;background:none;border:0;color:inherit;font:inherit;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;cursor:pointer}
+
+/* hero */
+.hero{position:relative;height:100vh;min-height:620px;color:#fff;overflow:hidden;padding:0}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.04);animation:zoom 14s ease-out forwards}
+@keyframes zoom{to{transform:scale(1)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.45) 0%,rgba(0,0,0,.15) 40%,rgba(0,0,0,.7) 100%)}
+.hero .wrap{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:90px}
+.hero .eyebrow{color:rgba(255,255,255,.8)}
+.hero h1{font-weight:300;font-size:clamp(2.6rem,7vw,6rem);line-height:1;letter-spacing:-.02em;margin:22px 0 26px;max-width:14ch}
+.hero p{max-width:540px;font-size:1.08rem;color:rgba(255,255,255,.88)}
+.hero .bigv{position:absolute;right:-4vw;top:8vh;z-index:1;font-size:62vh;line-height:1;font-weight:300;color:rgba(255,255,255,.08);pointer-events:none}
+.btn{display:inline-flex;align-items:center;gap:12px;margin-top:34px;padding:15px 30px;border:1px solid currentColor;text-decoration:none;font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500;transition:background .3s,color .3s}
+.hero .btn:hover{background:#fff;color:var(--ink)}
+.btn.dark{background:var(--ink);color:#fff;border-color:var(--ink)}
+.btn.dark:hover{background:transparent;color:var(--ink)}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:90px;align-items:start}
+.about-grid p{color:#3c3a37;margin-bottom:18px;font-size:1.02rem}
+.motto{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.6rem,2.6vw,2.2rem);line-height:1.3;border-left:1px solid var(--ink);padding-left:28px;margin-top:40px}
+.motto small{display:block;font-family:'Jost';font-style:normal;font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--grey);margin-top:14px}
+.values{list-style:none;border-top:1px solid var(--line)}
+.values li{display:flex;gap:26px;padding:22px 0;border-bottom:1px solid var(--line);font-size:1.08rem}
+.values li span{font-size:.72rem;color:var(--grey);letter-spacing:.1em;padding-top:6px}
+
+/* stats */
+.stats{background:var(--ink);color:#fff;padding:80px 0}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
+.stat strong{display:block;font-weight:300;font-size:clamp(2.4rem,4.5vw,3.8rem);line-height:1}
+.stat span{display:block;margin-top:12px;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+
+/* sectors */
+.sectors{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:50px}
+.sector{background:var(--paper);padding:40px 34px 46px;transition:background .3s}
+.sector:hover{background:var(--white)}
+.sector em{font-style:normal;font-size:.72rem;letter-spacing:.2em;color:var(--accent);font-weight:500}
+.sector h3{margin:18px 0 12px;font-size:1.2rem;font-weight:400}
+.sector p{color:var(--grey);font-size:.95rem}
+.note{margin-top:34px;max-width:760px;color:#3c3a37}
+
+/* projects */
+#progetti{background:var(--white)}
+.proj-head{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap}
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.filters button{background:none;border:1px solid var(--line);padding:10px 18px;font:inherit;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;transition:all .25s}
+.filters button.on,.filters button:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:34px 28px;margin-top:50px}
+.card{cursor:pointer;text-align:left;background:none;border:0;font:inherit;color:inherit}
+.card .ph{overflow:hidden;aspect-ratio:4/5;background:#ddd}
+.card img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.card:hover img{transform:scale(1.05)}
+.card .meta{display:flex;justify-content:space-between;margin-top:16px;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--grey)}
+.card h3{font-weight:400;font-size:1.15rem;margin-top:6px}
+.card.hide{display:none}
+
+/* modal */
+.modal{position:fixed;inset:0;z-index:100;background:rgba(10,10,10,.92);display:none;overflow-y:auto}
+.modal.open{display:block}
+.modal-inner{max-width:1180px;margin:0 auto;padding:70px 28px 80px;color:#fff;display:grid;grid-template-columns:1.6fr 1fr;gap:50px}
+.modal .main-img{width:100%;aspect-ratio:4/3;object-fit:cover;background:#222}
+.thumbs{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-top:8px}
+.thumbs img{aspect-ratio:1;object-fit:cover;cursor:pointer;opacity:.55;transition:opacity .2s}
+.thumbs img.on,.thumbs img:hover{opacity:1}
+.modal h3{font-size:1.9rem;font-weight:300;line-height:1.15;margin:12px 0 26px}
+.modal dl{display:grid;grid-template-columns:auto 1fr;gap:10px 24px;font-size:.92rem;border-top:1px solid rgba(255,255,255,.2);padding-top:22px}
+.modal dt{color:rgba(255,255,255,.55);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;padding-top:3px}
+.modal .desc{margin:26px 0 18px;color:rgba(255,255,255,.85)}
+.modal ul{list-style:none;font-size:.9rem;color:rgba(255,255,255,.75)}
+.modal ul li{padding:7px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+.close{position:fixed;top:22px;right:28px;background:none;border:0;color:#fff;font:inherit;font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;z-index:2}
+.modal .eyebrow{color:rgba(255,255,255,.6)}
+
+/* hospitality */
+.hosp{display:grid;grid-template-columns:1fr 1.5fr;gap:80px}
+table{width:100%;border-collapse:collapse;font-size:.95rem}
+th{text-align:left;font-weight:500;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--grey);padding:0 12px 14px 0;border-bottom:1px solid var(--ink)}
+td{padding:15px 12px 15px 0;border-bottom:1px solid var(--line);vertical-align:top}
+td.num{text-align:right;white-space:nowrap;font-weight:400}
+th.num{text-align:right}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.chips span{border:1px solid var(--line);padding:6px 14px;font-size:.85rem}
+.partner{margin-top:36px;padding:26px 28px;background:var(--white);border-left:2px solid var(--accent);font-size:.96rem}
+
+/* team */
+#team{background:var(--white)}
+.team{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:50px}
+.member{background:var(--white);padding:30px 26px}
+.member em{font-style:normal;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--grey);display:block;margin-bottom:10px;line-height:1.5}
+.member strong{font-weight:400;font-size:1.05rem}
+.member.lead{background:var(--ink);color:#fff}
+.member.lead em{color:rgba(255,255,255,.55)}
+.partners-row{margin-top:46px;display:flex;flex-wrap:wrap;gap:12px 40px;align-items:center}
+.partners-row .eyebrow{width:100%;margin-bottom:6px}
+.partners-row b{font-weight:400;letter-spacing:.14em;font-size:.9rem}
+.certs{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:60px}
+.cert{border:1px solid var(--line);padding:30px;display:flex;gap:24px;align-items:center}
+.cert .badge{flex:none;width:78px;height:78px;border-radius:50%;border:1px solid var(--ink);display:grid;place-items:center;font-size:.8rem;font-weight:500;letter-spacing:.06em;text-align:center;line-height:1.1}
+.cert p{color:var(--grey);font-size:.93rem}
+
+/* contact */
+#contatti{background:var(--ink);color:#fff;position:relative;overflow:hidden}
+#contatti .bigv{position:absolute;right:-3vw;bottom:-12vh;font-size:70vh;line-height:1;font-weight:300;color:rgba(255,255,255,.04);pointer-events:none}
+#contatti .eyebrow{color:rgba(255,255,255,.6)}
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:50px;margin-top:60px;position:relative}
+.contact-grid h3{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.55);font-weight:500;margin-bottom:16px}
+.contact-grid p{font-size:1rem;line-height:1.8}
+.contact-grid a{text-decoration:none;border-bottom:1px solid rgba(255,255,255,.3)}
+#contatti .btn{color:#fff}
+#contatti .btn:hover{background:#fff;color:var(--ink)}
+footer{background:#0b0b0b;color:rgba(255,255,255,.5);font-size:.78rem;padding:30px 0}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .9s,transform .9s}
+.reveal.in{opacity:1;transform:none}
+
+@media(max-width:960px){
+  section{padding:84px 0}
+  .about-grid,.hosp,.modal-inner{grid-template-columns:1fr;gap:46px}
+  .grid,.sectors{grid-template-columns:1fr 1fr}
+  .team{grid-template-columns:1fr 1fr}
+  .stats .wrap{grid-template-columns:1fr 1fr;gap:44px 30px}
+  .contact-grid,.certs{grid-template-columns:1fr}
+  .burger{display:block}
+  .nav ul{position:fixed;inset:78px 0 auto 0;background:var(--paper);color:var(--ink);flex-direction:column;gap:0;padding:10px 28px 24px;display:none;box-shadow:0 10px 20px rgba(0,0,0,.08)}
+  .nav ul.open{display:flex}
+  .nav ul li{border-bottom:1px solid var(--line)}
+  .nav ul a{display:block;padding:16px 0}
+  header.menu{background:var(--paper)}
+  header.menu .nav{color:var(--ink)}
+  header.menu .logo small{color:var(--grey)}
+}
+@media(max-width:600px){
+  .grid,.sectors,.team{grid-template-columns:1fr}
+  .logo small{display:none}
+  .hide-sm{display:none}
+}
+</style>
+</head>
+<body>
+
+<header id="top">
+  <div class="wrap nav">
+    <a href="#" class="logo" aria-label="Innova — home"><b>INNO<span>V</span>A</b><small>engineering &amp; construction</small></a>
+    <button class="burger" id="burger" aria-expanded="false">Menu</button>
+    <ul id="menu">
+      <li><a href="#chi-siamo">Chi siamo</a></li>
+      <li><a href="#settori">Settori</a></li>
+      <li><a href="#progetti">Progetti</a></li>
+      <li><a href="#alberghiero">Hospitality</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#contatti">Contatti</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="hero">
+  <img src="img/02.jpg" alt="Restauro conservativo B&amp;B Hotels Milano Duomo Velasca">
+  <div class="bigv" aria-hidden="true">V</div>
+  <div class="wrap">
+    <div class="eyebrow">Impresa di costruzioni · Milano</div>
+    <h1>Costruiamo con passione da oltre quarant’anni.</h1>
+    <p>Ristrutturazioni complesse, restauri conservativi, hotel, residenze di pregio e spazi direzionali, in tutta Italia.</p>
+    <div><a href="#progetti" class="btn">Scopri i progetti →</a></div>
+  </div>
+</section>
+
+<section id="chi-siamo">
+  <div class="wrap about-grid">
+    <div class="reveal">
+      <div class="eyebrow">Chi siamo</div>
+      <h2>Un’impresa di famiglia, una responsabilità per ogni cantiere.</h2>
+      <p>Innova S.r.l. nasce da un’esperienza nel settore delle costruzioni che affonda le proprie radici oltre quarant’anni fa. Nel tempo abbiamo sviluppato solide competenze e una profonda conoscenza del nostro lavoro, consapevoli che ogni progetto è una nuova sfida e un’opportunità di crescita.</p>
+      <p>Il cuore pulsante dell’azienda è la famiglia: il management è completamente interno. Questo ci consente di garantire continuità gestionale, controllo diretto delle attività e un forte senso di responsabilità verso ogni opera realizzata.</p>
+      <p>Il mercato ha attraversato periodi favorevoli e momenti più complessi. Grazie alla determinazione, alla professionalità e alla collaborazione con il nostro team e con partner qualificati, abbiamo sempre mantenuto gli impegni presi con i nostri clienti.</p>
+      <div class="motto">“Volere è potere e se ami il tuo lavoro non ti pesa.”<small>Il nostro motto</small></div>
+    </div>
+    <div class="reveal">
+      <div class="eyebrow">I nostri valori</div>
+      <ul class="values" style="margin-top:28px">
+        <li><span>01</span>Passione per il lavoro</li>
+        <li><span>02</span>Affidabilità e serietà professionale</li>
+        <li><span>03</span>Rispetto dei tempi e degli impegni</li>
+        <li><span>04</span>Attenzione alla qualità costruttiva</li>
+        <li><span>05</span>Collaborazione con professionisti e partner qualificati</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="wrap">
+    <div class="stat reveal"><strong>40+</strong><span>Anni di esperienza</span></div>
+    <div class="stat reveal"><strong>16</strong><span>Interventi alberghieri</span></div>
+    <div class="stat reveal"><strong>€ 9 M</strong><span>Il nostro cantiere più grande</span></div>
+    <div class="stat reveal"><strong>ISO 9001</strong><span>Qualità certificata</span></div>
+  </div>
+</div>
+
+<section id="settori">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">Settori di attività</div>
+      <h2>Operiamo su tutto il territorio nazionale.</h2>
+    </div>
+    <div class="sectors reveal">
+      <div class="sector"><em>01</em><h3>Ristrutturazioni edilizie complesse</h3><p>Interventi integrali su edifici esistenti, anche con cambio di destinazione d’uso.</p></div>
+      <div class="sector"><em>02</em><h3>Restauri conservativi</h3><p>Recupero di immobili storici nel rispetto dei materiali e degli elementi originali.</p></div>
+      <div class="sector"><em>03</em><h3>Strutture ricettive e alberghiere</h3><p>Riqualificazione di hotel su larga scala, con tempi certi e strutture operative.</p></div>
+      <div class="sector"><em>04</em><h3>Residenziale di fascia alta</h3><p>Luxury residential: marmi, boiserie, parquet e falegnameria su misura.</p></div>
+      <div class="sector"><em>05</em><h3>Uffici e spazi direzionali</h3><p>Sale riunioni, aree operative, aree break e spazi di servizio per il personale.</p></div>
+      <div class="sector"><em>06</em><h3>Sale polifunzionali</h3><p>Spazi per attività aziendali, eventi, meeting e usi multifunzionali.</p></div>
+    </div>
+    <p class="note reveal">Eseguiamo inoltre <strong style="font-weight:500">opere di carpenteria metallica</strong>, sia per il rinforzo e il consolidamento di strutture esistenti, sia per nuove strutture metalliche di progetto, nel pieno rispetto delle normative tecniche e strutturali vigenti.</p>
+  </div>
+</section>
+
+<section id="progetti">
+  <div class="wrap">
+    <div class="proj-head reveal">
+      <div>
+        <div class="eyebrow">Progetti di rilievo</div>
+        <h2 style="margin-bottom:0">Lavori selezionati.</h2>
+      </div>
+      <div class="filters" id="filters">
+        <button class="on" data-f="all">Tutti</button>
+        <button data-f="hotel">Alberghiero</button>
+        <button data-f="lusso">Residenziale di lusso</button>
+        <button data-f="uffici">Uffici</button>
+      </div>
+    </div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<section id="alberghiero">
+  <div class="wrap hosp">
+    <div class="reveal">
+      <div class="eyebrow">Collaborazioni nel settore alberghiero</div>
+      <h2>Partner di B&amp;B Hotels Italia.</h2>
+      <p style="color:#3c3a37">Negli ultimi anni abbiamo sviluppato una forte competenza nell’hospitality, gestendo la riqualificazione di strutture ricettive su larga scala. Da diversi anni collaboriamo con il gruppo B&amp;B Hotels Italia S.p.A., per il quale abbiamo realizzato numerosi interventi in diverse città italiane.</p>
+      <div style="margin-top:34px">
+        <div class="eyebrow">Restyling e riqualificazione</div>
+        <div class="chips"><span>Ferrara</span><span>Santa Margherita Ligure</span><span>Venezia</span><span>Borgaro Torinese</span><span>Latina</span><span>Palermo</span><span>Bari</span></div>
+      </div>
+      <div class="partner">Di recente collaboriamo anche con il gruppo <strong style="font-weight:500">Casa Baglioni Hotel</strong>, con interventi di riqualificazione e manutenzione nelle strutture tra Milano e Firenze.</div>
+    </div>
+    <div class="reveal">
+      <div class="eyebrow" style="margin-bottom:22px">Ristrutturazioni complete</div>
+      <table>
+        <thead><tr><th>Città</th><th>Intervento</th><th class="num">Importo</th><th class="num hide-sm">Durata</th></tr></thead>
+        <tbody>
+          <tr><td>Milano Duomo, Velasca</td><td>Restauro conservativo pesante</td><td class="num">€ 9.000.000</td><td class="num hide-sm">9 mesi</td></tr>
+          <tr><td>Milano Duomo, S. Tommaso</td><td>Restauro conservativo pesante</td><td class="num">€ 4.000.000</td><td class="num hide-sm">6 mesi</td></tr>
+          <tr><td>Palermo</td><td>Ristrutturazione</td><td class="num">€ 4.000.000</td><td class="num hide-sm">6 mesi</td></tr>
+          <tr><td>Palermo</td><td>Intervento strutturale</td><td class="num">€ 1.000.000</td><td class="num hide-sm">–</td></tr>
+          <tr><td>Prato</td><td>93 camere · opere edili</td><td class="num">€ 2.500.000</td><td class="num hide-sm">9 mesi</td></tr>
+          <tr><td>Catania</td><td>97 camere · opere edili</td><td class="num">€ 2.500.000</td><td class="num hide-sm">9 mesi</td></tr>
+          <tr><td>Como Baradello</td><td>Ristrutturazione</td><td class="num">€ 1.800.000</td><td class="num hide-sm">2,5 mesi</td></tr>
+          <tr><td>Alba</td><td>Riqualificazione di 93 camere</td><td class="num">€ 1.700.000</td><td class="num hide-sm">3 mesi</td></tr>
+          <tr><td>Savona</td><td>Ristrutturazione</td><td class="num">€ 500.000</td><td class="num hide-sm">–</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="team">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">Struttura e organizzazione</div>
+      <h2>Gestione diretta dei soci, controllo costante su ogni fase.</h2>
+      <p style="max-width:720px;color:#3c3a37">La società è composta da due soci con pari quota di capitale. La gestione diretta ci consente di mantenere un rapporto personale con i clienti e un controllo costante su tutte le fasi operative dei cantieri.</p>
+    </div>
+    <div class="team reveal">
+      <div class="member lead"><em>Amministratore Unico · RSPP</em><strong>Ing. Francesco Del Villano</strong></div>
+      <div class="member lead"><em>Socio · Direttore di cantiere</em><strong>Geom. Angelo Del Villano</strong></div>
+      <div class="member"><em>Project controller · Resp. progettazione</em><strong>Arch. A. Tornaghi</strong></div>
+      <div class="member"><em>Direttore di progetto · Resp. qualità</em><strong>Ing. F. Lampis</strong></div>
+      <div class="member"><em>Studio tecnico</em><strong>Arch. S. Battiston</strong></div>
+      <div class="member"><em>Capocantiere · Logistica · RLS</em><strong>Rocco Paolicelli</strong></div>
+      <div class="member"><em>Consulenti</em><strong>Ing. Roberto Banfi<br>Ing. Luciano Martini</strong></div>
+      <div class="member"><em>Consulente e responsabile LEED</em><strong>Tekne</strong></div>
+    </div>
+    <div class="partners-row reveal">
+      <div class="eyebrow">Squadre e partner esecutivi</div>
+      <b>TOP FRAMES ITALIA</b><b>CARPENTERIE PEZZETTI</b><b>PREALPI</b><b>NUOVA TERMOEUROPA</b>
+    </div>
+    <div class="certs reveal">
+      <div class="cert"><div class="badge">ISO<br>9001</div><div><h3>Sistema di gestione qualità</h3><p>Garanzia di qualità e controllo dei processi aziendali.</p></div></div>
+      <div class="cert"><div class="badge">PdR<br>125</div><div><h3>Parità di genere</h3><p>Certificazione UNI/PdR 125:2022 sulla parità di genere.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contatti">
+  <div class="bigv" aria-hidden="true">V</div>
+  <div class="wrap">
+    <div class="eyebrow">Contatti</div>
+    <h2>Parliamo del vostro prossimo progetto.</h2>
+    <a class="btn" href="mailto:info@innovaedile.it">Scrivici · info@innovaedile.it →</a>
+    <div class="contact-grid">
+      <div><h3>Sede legale</h3><p>Innova S.r.l.<br>Via Manfredo Camperio 4<br>20125 Milano</p></div>
+      <div><h3>Ufficio · Deposito 01</h3><p>Via Caveto 12<br>20095 Cusano Milanino (MI)<br><a href="tel:+390291945157">02 91945157</a></p></div>
+      <div><h3>Deposito 02</h3><p>Corso Umberto I 279<br>81039 Villa Literno (CE)<br><a href="tel:+390813507946">081 3507946</a></p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© Innova S.r.l. · P.IVA 10171091217 · PEC innovasrl_2022@pec.it · SDI M5UXCR1</span>
+    <span>innovaedile.it</span>
+  </div>
+</footer>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true">
+  <button class="close" id="close">Chiudi ✕</button>
+  <div class="modal-inner">
+    <div><img class="main-img" id="mImg" alt=""><div class="thumbs" id="mThumbs"></div></div>
+    <div>
+      <div class="eyebrow" id="mCat"></div>
+      <h3 id="mTitle"></h3>
+      <dl id="mDl"></dl>
+      <p class="desc" id="mDesc"></p>
+      <ul id="mWorks"></ul>
+    </div>
+  </div>
+</div>
+
+<script>
+const CAT={hotel:'Settore alberghiero',lusso:'Residenziale di lusso',uffici:'Direzionale · uffici'};
+const hotelWorks=['Demolizione di parti interne leggere e pesanti','Costruzione a secco dell’involucro interno','Massetti, pavimenti e rivestimenti','Tinteggiatura'];
+const P=[
+ {c:'hotel',t:'B&B Hotels Albricci – Duomo – Velasca',y:'2025 / 2026',r:'General Contractor',d:'9 mesi',a:'€ 9.000.000',img:[2,1,3,4],
+  desc:'Restauro conservativo pesante con cambio di destinazione d’uso da residenziale ad alberghiero.',
+  w:[...hotelWorks,'Impianti meccanici / VVFF','Impianti elettrici e speciali + fotovoltaico','Sostituzione infissi in legno e ferro','Opere in carpenteria metallica','Ascensori']},
+ {c:'hotel',t:'B&B Hotels Palermo',y:'2019 / 2024',r:'General Contractor',d:'6 mesi',a:'€ 4.000.000',img:[5,6,7,8],
+  desc:'Ristrutturazione completa in stile mediterraneo: facciata storica, hall, aree lounge e terrazza panoramica.',
+  w:[...hotelWorks,'Impianti meccanici / VVFF','Impianti elettrici e speciali + fotovoltaico','Sostituzione infissi in legno e ferro','Carpenteria metallica per adeguamento sismico']},
+ {c:'hotel',t:'B&B Hotels Catania, Corso Sicilia 30',y:'2023 / 2024',r:'Impresa esecutrice delle opere edili',d:'10 mesi',a:'€ 3.000.000',img:[9,10,11,12],
+  desc:'Ristrutturazione di un edificio con cambio di destinazione d’uso da commerciale ad alberghiero.',
+  w:['Demolizione di parti interne leggere e pesanti','Costruzione a secco di tutte le parti interne','Massetti, pavimenti e rivestimenti','Tinteggiatura','Adeguamento ascensori','Sostituzione infissi']},
+ {c:'hotel',t:'B&B Hotels Prato',y:'2023 / 2024',r:'Impresa esecutrice delle opere edili',d:'10 mesi',a:'€ 3.000.000',img:[13,14,15,16],
+  desc:'Ristrutturazione di un edificio con cambio di destinazione d’uso da commerciale ad alberghiero.',
+  w:['Demolizione di parti interne leggere e pesanti','Costruzione a secco di tutte le parti interne','Massetti, pavimenti e rivestimenti','Tinteggiatura','Adeguamento ascensori','Sostituzione infissi']},
+ {c:'lusso',t:'Via Turati, Milano',y:'2024',r:'General Contractor',d:'12 mesi',img:[17,18,19,20,21,22],
+  desc:'Ristrutturazione di un appartamento di rappresentanza: marmi, boiserie in legno scuro e parquet a spina ungherese.',
+  w:['Consolidamento solai in legno','Restauro conservativo di persiane esterne e solaio in legno con foglioline intarsiate','Impianti elettrici e meccanici di ultima generazione','Nuovi infissi','Copertura in legno con coppi di riuso']},
+ {c:'lusso',t:'Via Sant’Antonio, Milano',y:'2024',r:'General Contractor',d:'12 mesi',img:[23,24,25,26,27,28],
+  desc:'Recupero di un immobile storico: volte a vista, travertino e una raffinata selezione di arredi e opere d’arte.',
+  w:['Consolidamento solai in legno','Restauro conservativo di persiane esterne e solaio in legno con foglioline intarsiate','Impianti elettrici e meccanici di ultima generazione','Nuovi infissi','Copertura in legno con coppi di riuso']},
+ {c:'lusso',t:'Via Ariosto, Milano',y:'2019',r:'General Contractor',d:'3 mesi',img:[29,30,31,32,33,34],
+  desc:'Boiserie grigia su misura, dettagli in marmo e velluti verde oliva per un interior contemporaneo.',
+  w:['Impianti elettrici e meccanici','Infissi di recupero','Vetrata in ferro a specchiature','Fornitura e posa parquet','Pavimenti e rivestimenti in gres']},
+ {c:'lusso',t:'Via Romagnosi, Milano',y:'2022',r:'General Contractor',d:'3 mesi',img:[35,36,37,38,39,40],
+  desc:'Toni caldi, falegnameria su misura e un mix curato di arte e complementi d’arredo.',
+  w:['Impianti elettrici e meccanici','Infissi di recupero','Parquet a liste realizzato in opera','Rivestimenti in marmo']},
+ {c:'uffici',t:'Uffici DsignInc, Milano',y:'2022',r:'General Contractor',d:'2 mesi',img:[41,42,43,44,45,46],
+  desc:'Un progetto direzionale dal carattere deciso: carta da parati chinoiserie, velluti e boiserie scanalata.',w:[]},
+ {c:'uffici',t:'Uffici B&B Hotels Italia, Via Leopardi 1, Milano',y:'2024',r:'General Contractor',d:'5 mesi',a:'€ 1.500.000',img:[47,48,49,50],
+  desc:'Ristrutturazione con demolizione e ricostruzione delle parti non strutturali: 1.500 mq su 4 livelli per 120 dipendenti.',
+  w:['Nuova distribuzione degli spazi','Pavimenti e rivestimenti','Bagni e sale riunioni','Pareti insonorizzate','Phone booth','Impianti meccanici ed elettrici']}
+];
+const src=n=>'img/'+String(n).padStart(2,'0')+'.jpg';
+const grid=document.getElementById('grid');
+P.forEach((p,i)=>{
+  const b=document.createElement('button');b.className='card reveal';b.dataset.c=p.c;
+  b.innerHTML=`<div class="ph"><img loading="lazy" src="${src(p.img[0])}" alt="${p.t}"></div><div class="meta"><span>${CAT[p.c]}</span><span>${p.y}</span></div><h3>${p.t}</h3>`;
+  b.onclick=()=>openP(i);grid.appendChild(b);
+});
+document.getElementById('filters').onclick=e=>{
+  const f=e.target.dataset.f;if(!f)return;
+  [...e.currentTarget.children].forEach(x=>x.classList.toggle('on',x===e.target));
+  grid.querySelectorAll('.card').forEach(c=>c.classList.toggle('hide',f!=='all'&&c.dataset.c!==f));
+};
+const modal=document.getElementById('modal'),mImg=document.getElementById('mImg');
+function openP(i){
+  const p=P[i];
+  document.getElementById('mCat').textContent=CAT[p.c];
+  document.getElementById('mTitle').textContent=p.t;
+  document.getElementById('mDesc').textContent=p.desc;
+  document.getElementById('mDl').innerHTML=`<dt>Anno</dt><dd>${p.y}</dd><dt>Ruolo</dt><dd>${p.r}</dd><dt>Durata</dt><dd>${p.d}</dd>`+(p.a?`<dt>Importo</dt><dd>${p.a}</dd>`:'');
+  document.getElementById('mWorks').innerHTML=p.w.map(x=>`<li>${x}</li>`).join('');
+  mImg.src=src(p.img[0]);mImg.alt=p.t;
+  const th=document.getElementById('mThumbs');
+  th.innerHTML=p.img.map((n,k)=>`<img src="${src(n)}" data-n="${n}" class="${k?'':'on'}" alt="">`).join('');
+  th.onclick=e=>{if(!e.target.dataset.n)return;mImg.src=src(+e.target.dataset.n);[...th.children].forEach(x=>x.classList.toggle('on',x===e.target));};
+  modal.classList.add('open');modal.scrollTop=0;document.body.style.overflow='hidden';
+}
+function closeM(){modal.classList.remove('open');document.body.style.overflow='';}
+document.getElementById('close').onclick=closeM;
+modal.onclick=e=>{if(e.target===modal||e.target.classList.contains('modal-inner'))closeM();};
+addEventListener('keydown',e=>{if(e.key==='Escape')closeM();});
+
+const hdr=document.getElementById('top');
+const onS=()=>hdr.classList.toggle('solid',scrollY>40);addEventListener('scroll',onS);onS();
+const burger=document.getElementById('burger'),menu=document.getElementById('menu');
+burger.onclick=()=>{const o=menu.classList.toggle('open');hdr.classList.toggle('menu',o);burger.setAttribute('aria-expanded',o);};
+menu.onclick=e=>{if(e.target.tagName==='A'){menu.classList.remove('open');hdr.classList.remove('menu');}};
+
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
